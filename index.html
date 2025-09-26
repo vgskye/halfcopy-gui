@@ -1,0 +1,85 @@
+<!doctype html>
+<html
+  lang="en"
+  class="w-full h-full bg-gray-100 dark:bg-gray-900 dark:text-white"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>halfcopy</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body class="w-full h-full flex items-center justify-center">
+    <div id="main-page" class="flex flex-col gap-4">
+      <div class="flex flex-col items-center gap-2">
+        <h1 class="text-2xl font-semibold w-fit">Send Files</h1>
+        <span class="isolate inline-flex rounded-md shadow-xs dark:shadow-none w-full">
+          <button
+            id="send-file"
+            type="button"
+            class="text-center relative grow items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 inset-ring-1 inset-ring-gray-300 hover:bg-gray-50 focus:z-10 dark:bg-white/10 dark:text-white dark:inset-ring-gray-700 dark:hover:bg-white/20"
+          >
+            Select File
+          </button>
+          <button
+            id="send-folder"
+            type="button"
+            class="text-center relative -ml-px grow items-center rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 inset-ring-1 inset-ring-gray-300 hover:bg-gray-50 focus:z-10 dark:bg-white/10 dark:text-white dark:inset-ring-gray-700 dark:hover:bg-white/20"
+          >
+            Select Folder
+          </button>
+        </span>
+      </div>
+      <div class="flex items-center">
+        <div
+          aria-hidden="true"
+          class="w-full border-t border-gray-300 dark:border-white/15"
+        ></div>
+        <div class="relative flex justify-center">
+          <span
+            class="bg-white px-2 text-sm text-gray-500 dark:bg-gray-900 dark:text-gray-400"
+            >or</span
+          >
+        </div>
+        <div
+          aria-hidden="true"
+          class="w-full border-t border-gray-300 dark:border-white/15"
+        ></div>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <h1 class="text-2xl font-semibold w-fit">Receive Files</h1>
+        <div class="flex w-90">
+          <div class="-mr-px grid grow grid-cols-1 focus-within:relative">
+            <input
+              id="code"
+              type="text"
+              name="code"
+              placeholder="Code"
+              class="col-start-1 row-start-1 block w-full rounded-l-md bg-white py-1.5 pr-3 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-gray-700 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
+            />
+          </div>
+          <button
+            id="get"
+            type="button"
+            class="flex shrink-0 items-center gap-x-1.5 rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 outline-1 -outline-offset-1 outline-gray-300 hover:bg-gray-50 focus:relative focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 dark:bg-white/10 dark:text-white dark:outline-gray-700 dark:hover:bg-white/20 dark:focus:outline-indigo-500"
+          >
+            Get
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="progress-page" class="hidden flex-col gap-4 items-center justify-center">
+      <div class="overflow-hidden rounded-full bg-gray-200 dark:bg-white/10 w-lg">
+        <div id="progress-bar" style="width: 0%" class="h-2 rounded-full bg-indigo-600 dark:bg-indigo-500"></div>
+      </div>
+      <div id="progress-text" class="w-fit">Reticulating splines...</div>
+    </div>
+    <div id="error-page" class="hidden flex-col gap-4">
+      <h1 class="text-2xl font-semibold w-fit">An error occurred</h1>
+      <p id="error-message"></p>
+      <button id="error-go-home" type="button" class="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-xs inset-ring inset-ring-gray-300 hover:bg-gray-50 dark:bg-white/10 dark:text-white dark:shadow-none dark:inset-ring-white/5 dark:hover:bg-white/20">Go back</button>
+    </div>
+  </body>
+</html>
